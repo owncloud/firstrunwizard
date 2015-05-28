@@ -21,21 +21,33 @@
 *
 */
 
-
 // Check if we are a user
-OCP\User::checkLoggedIn();
+\OCP\User::checkLoggedIn();
 
 $defaults = new \OCP\Defaults();
+$config = \OC::$server->getConfig();
+$user = \OC::$server->getUserSession()->getUser();
 
 //links to clients
 $clients = array(
-	'desktop' => OCP\Config::getSystemValue('customclient_desktop', $defaults->getSyncClientUrl()),
-	'android' => OCP\Config::getSystemValue('customclient_android', $defaults->getAndroidClientUrl()),
-	'ios'     => OCP\Config::getSystemValue('customclient_ios', $defaults->getiOSClientUrl())
+	'desktop' => $config->getSystemValue('customclient_desktop', $defaults->getSyncClientUrl()),
+	'android' => $config->getSystemValue('customclient_android', $defaults->getAndroidClientUrl()),
+	'ios'     => $config->getSystemValue('customclient_ios', $defaults->getiOSClientUrl())
 );
 
-$tmpl = new OCP\Template( 'firstrunwizard', 'wizard', '' );
-$tmpl->assign('logo', OCP\Util::linkTo('core','img/logo-inverted.svg'));
+$tmpl = new \OCP\Template('firstrunwizard', 'main', '');
 $tmpl->assign('clients', $clients);
-$tmpl->printPage();
 
+if ($user->canChangeDisplayName()) {
+	$tmpl->assign('displayName', $user->getDisplayName());
+	// this is the only permission a backend provides and is also used
+	// for the permission of setting a email address
+	$tmpl->assign('email', $config->getUserValue($user->getUID(), 'settings', 'email'));
+}
+
+if ($config->getSystemValue('enable_avatars', true) === true) {
+	$tmpl->assign('enableAvatars', true);
+	$tmpl->assign('avatarChangeSupported', $user->canChangeAvatar());
+}
+
+$tmpl->printPage();
