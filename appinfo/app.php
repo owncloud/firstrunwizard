@@ -27,8 +27,8 @@ use OCA\FirstRunWizard\Config;
 //\OCP\Util::addStyle('firstrunwizard', 'jcrop/jquery.Jcrop');
 //\OCP\Util::addScript('firstrunwizard', 'jcrop/jquery.Jcrop');
 
-\OCP\Util::addScript('files', 'jquery.fileupload');
-\OCP\Util::addScript('settings', 'personal');
+//\OCP\Util::addScript('files', 'jquery.fileupload');
+//\OCP\Util::addScript('settings', 'personal');
 
 \OCP\Util::addStyle('firstrunwizard', 'colorbox');
 \OCP\Util::addScript('firstrunwizard', 'jquery.colorbox');
