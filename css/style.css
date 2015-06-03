@@ -46,7 +46,7 @@
 	padding: 20px;
 }
 
-#firstrunwizard-content .welcome {
+.welcome {
 	text-align: center;
 }
 
@@ -59,9 +59,14 @@
 	//margin-bottom: 10px;
 }
 
-#firstrunwizard-content .close {
-	position: absolute;
-	top: 0;
-	right: 0;
-	padding: 20px;
+.msg.success {
+    background-color: #47a447;
+    color: #ffffff;
+    padding: 3px;
+}
+
+.msg.error {
+    background-color: #d2322d;
+    color: #ffffff;
+    padding: 3px;
 }
