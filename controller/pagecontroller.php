@@ -51,6 +51,16 @@ class PageController extends Controller {
 	 * @NoCSRFRequired
 	 */
 	public function index() {
+		$defaults = new \OCP\Defaults();
+		$clients = array(
+			'desktop' => $this->config->getSystemValue('customclient_desktop',
+										$defaults->getSyncClientUrl()),
+			'android' => $this->config->getSystemValue('customclient_android', 
+										$defaults->getAndroidClientUrl()),
+			'ios'     => $this->config->getSystemValue('customclient_ios', 
+										$defaults->getiOSClientUrl())
+		);
+		
 		if ($this->user->canChangeDisplayName()){
 			$displayName = $this->user->getDisplayName();
 			// this is the only permission a backend provides and is also used
@@ -64,7 +74,8 @@ class PageController extends Controller {
 			$avatarChangeSupported = $this->user->canChangeAvatar();
 		}
 		
-		$params = [	'displayName' => $displayName,
+		$params = [	'clients' => $clients,
+					'displayName' => $displayName,
 					'email' => $email,
 					'enableAvatars' => $enableAvatars,
 					'avatarChangeSupported' => $avatarChangeSupported,
@@ -96,5 +107,11 @@ class PageController extends Controller {
 				["data" => ["message" => $this->l10n->t('Email saved')],
 				'status' => 'success']);
 		}
+	}
+	
+	public function close() {
+		$this->config->setUserValue($this->userId, 'firstrunwizard', 'show', 0);
+		$redirect = \OC_Util::getDefaultPageUrl();
+		return new DataResponse(['defaultPageUrl' => $redirect]);
 	}
 }
