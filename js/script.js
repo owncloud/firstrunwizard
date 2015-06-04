@@ -27,7 +27,7 @@
 						if (name === "displayname"){
 							// update displayName on the top right expand button
 							$('#expandDisplayName').text(newValue);
-							if (newValue.slice(0,1) !== oldValue.slice(0,1) && oc_config.enable_avatars) {
+							if (newValue.slice(0,1) !== oldValue.slice(0,1) && ($('#avatar').length > 0)) {
 								updateAvatar();
 							}
 						}
@@ -122,8 +122,8 @@
 				$warning.text(data.data.message);
 			}
 		}
-		
-		if (oc_config.enable_avatars){
+
+		if ($('#avatar').length > 0){
 			var uploadparms = {
 				done: function (e, data) {
 					avatarResponseHandler(data.result);
@@ -184,12 +184,16 @@
 		$(document).on('focusout', '#email', changeValues);
 		
 		$("#app").dialog({
-		height: 650,
-		width: 1000,
-		modal: true,
-		close: function() {
-
-		}
-	  });
+			height: 650,
+			width: 1000,
+			closeOnEscape: false,
+			modal: true,
+			close: function() {
+				var url = OC.generateUrl('/apps/firstrunwizard/close');
+				$.post(url, function(response) {
+					$(location).attr('href', response.defaultPageUrl);
+				});
+			}
+		});
 	});
 })(jQuery, OC);
