@@ -35,7 +35,7 @@ if (\OCP\User::isLoggedIn()) {
 	$config = \OC::$server->getConfig();
 	$user = \OC::$server->getUserSession()->getUser();
 
-	//$config->setUserValue($user->getUID() , 'firstrunwizard' , 'show' , '1' );
+	$config->setUserValue($user->getUID() , 'firstrunwizard' , 'show' , '1' );
 	if ($config->getUserValue($user->getUID() , 'firstrunwizard' , 'show' , '1' ) === '1'){
 		header('Location: ' . \OC::$server->getURLGenerator()->linkToRoute('firstrunwizard.page.index'));
 	}
