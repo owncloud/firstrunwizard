@@ -83,7 +83,10 @@ class PageController extends Controller {
 		
 		return new TemplateResponse('firstrunwizard', 'main', $params);
 	}
-
+	
+	/**
+	 * @NoAdminRequired
+	 */
 	public function setDisplayName($newValue) {
 		if ($this->user->setDisplayName($newValue)) {
 			return new DataResponse(
@@ -95,7 +98,10 @@ class PageController extends Controller {
 				'status' => 'error']);
 		}
 	}
-	
+
+	/**
+	 * @NoAdminRequired
+	 */
 	public function setEmail($newValue) {
 		if ($newValue !== '' && !filter_var($newValue, FILTER_VALIDATE_EMAIL)) {
 			return new DataResponse(
@@ -109,6 +115,9 @@ class PageController extends Controller {
 		}
 	}
 	
+	/**
+	 * @NoAdminRequired
+	 */
 	public function close() {
 		$this->config->setUserValue($this->userId, 'firstrunwizard', 'show', 0);
 		$redirect = \OC_Util::getDefaultPageUrl();
