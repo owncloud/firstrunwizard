@@ -1,17 +1,27 @@
 <?php
 /**
- * Copyright (c) 2014 Morris Jobke <>
+ * ownCloud - firstrunwizard
+ *
  * This file is licensed under the Affero General Public License version 3 or
- * later.
- * See the COPYING-README file.
+ * later. See the COPYING file.
+ *
+ * @author Your Name <mail@example.com>
+ * @copyright Your Name 2015
  */
 
-/** @var $this OC\Route\Router */
-
-$this->create('firstrunwizard_enable', 'ajax/enable.php')
-	->actionInclude('firstrunwizard/ajax/enable.php');
-$this->create('firstrunwizard_disable', 'ajax/disable.php')
-	->actionInclude('firstrunwizard/ajax/disable.php');
-$this->create('firstrunwizard_wizard', 'wizard.php')
-	->actionInclude('firstrunwizard/wizard.php');
-
+/**
+ * Create your routes in here. The name is the lowercase name of the controller
+ * without the controller part, the stuff after the hash is the method.
+ * e.g. page#index -> OCA\firstrunwizard\Controller\PageController->index()
+ *
+ * The controller class has to be registered in the application.php file since
+ * it's instantiated in there
+ */
+return [
+    'routes' => [
+	   ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
+	   ['name' => 'page#setDisplayName', 'url' => '/displayname', 'verb' => 'POST'],
+	   ['name' => 'page#setEmail', 'url' => '/email', 'verb' => 'POST'],
+	   ['name' => 'page#close', 'url' => '/close', 'verb' => 'POST'],
+    ]
+];

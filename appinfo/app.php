@@ -1,35 +1,22 @@
 <?php
-
 /**
- * ownCloud - firstrunwizard App
+ * ownCloud - firstrunwizard
  *
- * @author Frank Karlitschek
- * @copyright 2012 Frank Karlitschek karlitschek@kde.org
- * 
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
- * License as published by the Free Software Foundation; either 
- * version 3 of the License, or any later version.
- * 
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU AFFERO GENERAL PUBLIC LICENSE for more details.
- *  
- * You should have received a copy of the GNU Affero General Public
- * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
- * 
+ * This file is licensed under the Affero General Public License version 3 or
+ * later. See the COPYING file.
+ *
+ * @author Your Name <mail@example.com>
+ * @copyright Your Name 2015
  */
 
+namespace OCA\FirstRunWizard\AppInfo;
 
-OC::$CLASSPATH['OCA_FirstRunWizard\Config'] = 'firstrunwizard/lib/firstrunwizard.php';
+if (\OCP\User::isLoggedIn()) {
+	$config = \OC::$server->getConfig();
+	$user = \OC::$server->getUserSession()->getUser();
 
-OCP\Util::addStyle( 'firstrunwizard', 'colorbox');
-OCP\Util::addScript( 'firstrunwizard', 'jquery.colorbox');
-OCP\Util::addScript( 'firstrunwizard', 'firstrunwizard');
+	if ($config->getUserValue($user->getUID() , 'firstrunwizard' , 'show' , '1' ) === '1'){
+		header('Location: ' . \OC::$server->getURLGenerator()->linkToRoute('firstrunwizard.page.index'));
+	}
 
-OCP\Util::addStyle('firstrunwizard', 'firstrunwizard');
-
-if(\OCP\User::isLoggedIn() and \OCA_FirstRunWizard\Config::isenabled()){
-	OCP\Util::addScript( 'firstrunwizard', 'activate');
 }
