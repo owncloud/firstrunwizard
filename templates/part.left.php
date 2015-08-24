@@ -14,7 +14,7 @@
 	 alt="<?php p($l->t('iOS app')); ?>" />
 </a>
 
-<?php if (OC_Util::getEditionString() === ''): ?>
+<?php if ($_['edition'] === ''): ?>
 	<h2><?php p($l->t('Connect your desktop apps to %s', array($theme->getName()))); ?></h2>
 	<a target="_blank" class="button" href="<?php p(link_to_docs('user-sync-calendars')) ?>">
 		<img class="appsmall appsmall-calendar svg" alt=""

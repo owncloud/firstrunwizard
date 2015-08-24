@@ -11,10 +11,14 @@
 
 namespace OCA\FirstRunWizard\Controller;
 
+use \OCA\FirstRunWizard\Lib\Util;
 use \OCP\IRequest;
 use \OCP\IUserSession;
 use \OCP\IConfig;
 use \OCP\IL10N;
+use \OCP\Defaults;
+use \OCP\IURLGenerator;
+use \OCP\App\IAppManager;
 use \OCP\AppFramework\Http\TemplateResponse;
 use \OCP\AppFramework\Http\DataResponse;
 use \OCP\AppFramework\Controller;
@@ -25,12 +29,16 @@ class PageController extends Controller {
 	private $user;
 	private $config;
 	private $l10n;
+	private $appManager;
+	private $urlGenerator;
 
 	public function __construct($AppName,
 								IRequest $request,
 								IUserSession $userSession,
 								IConfig $config,
 								IL10N $l10n,
+								IAppManager $appManager,
+								IURLGenerator $urlGenerator,
 								$UserId){
 		parent::__construct($AppName, $request);
 		
@@ -38,6 +46,8 @@ class PageController extends Controller {
 		$this->user = $userSession->getUser();
 		$this->config = $config;
 		$this->l10n = $l10n;
+		$this->appManager = $appManager;
+		$this->urlGenerator = $urlGenerator;
 	}
 
 	/**
@@ -51,15 +61,8 @@ class PageController extends Controller {
 	 * @NoCSRFRequired
 	 */
 	public function index() {
-		$defaults = new \OCP\Defaults();
-		$clients = array(
-			'desktop' => $this->config->getSystemValue('customclient_desktop',
-										$defaults->getSyncClientUrl()),
-			'android' => $this->config->getSystemValue('customclient_android', 
-										$defaults->getAndroidClientUrl()),
-			'ios'     => $this->config->getSystemValue('customclient_ios', 
-										$defaults->getiOSClientUrl())
-		);
+		$defaults = new Defaults();
+		$util = new Util($this->appManager, $this->config, $defaults);
 		
 		if ($this->user->canChangeDisplayName()){
 			$displayName = $this->user->getDisplayName();
@@ -71,14 +74,25 @@ class PageController extends Controller {
 		
 		if ($this->config->getSystemValue('enable_avatars', true) === true) {
 			$enableAvatars = true;
-			$avatarChangeSupported = $this->user->canChangeAvatar();
+			if ($this->user->canChangeAvatar()) {
+				$avatarChangeSupported = true;
+				$avatarController = $this->urlGenerator->linkToRoute('core.avatar.postAvatar');
+			} else {
+				$avatarChangeSupported = false;
+			}
+			
 		}
 		
+		$clients = $util->getSyncClientUrls();
+		$edition = $util->getEdition();
+		
 		$params = [	'clients' => $clients,
+					'edition' => $edition,
 					'displayName' => $displayName,
 					'email' => $email,
 					'enableAvatars' => $enableAvatars,
 					'avatarChangeSupported' => $avatarChangeSupported,
+					'avatarController' => $avatarController,
 					];
 		
 		return new TemplateResponse('firstrunwizard', 'main', $params);
@@ -120,7 +134,7 @@ class PageController extends Controller {
 	 */
 	public function close() {
 		$this->config->setUserValue($this->userId, 'firstrunwizard', 'show', 0);
-		$redirect = \OC_Util::getDefaultPageUrl();
+		$redirect = $this->urlGenerator->getAbsoluteURL('/');
 		return new DataResponse(['defaultPageUrl' => $redirect]);
 	}
 }

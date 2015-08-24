@@ -1,6 +1,6 @@
 <span class="welcome">
 	<h1><?php p($l->t('Welcome to %s', array($theme->getTitle()))); ?></h1>
-	<?php if (OC_Util::getEditionString() === ''): ?>
+	<?php if ($_['edition'] === ''): ?>
 		<p><?php p($l->t('Your personal web services. All your files, contacts, calendar and more, in one place.')); ?></p>
 	<?php else: ?>
 		<p><?php p($theme->getSlogan()); ?></p>
@@ -35,7 +35,7 @@
 <?php endif; ?>
 
 <?php if ($_['enableAvatars']): ?>
-<form id="avatar" method="post" action="<?php p(\OC_Helper::linkToRoute('core.avatar.postAvatar')); ?>">
+<form id="avatar" method="post" action="<?php p($_['avatarController']); ?>">
 	<h3><?php p($l->t('Profile picture')); ?></h3>
 	<div id="displayavatar">
 		<div class="avatardiv"></div><br>
