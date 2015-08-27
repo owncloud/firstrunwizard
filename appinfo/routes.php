@@ -22,6 +22,5 @@ return [
 	   ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
 	   ['name' => 'page#setDisplayName', 'url' => '/displayname', 'verb' => 'POST'],
 	   ['name' => 'page#setEmail', 'url' => '/email', 'verb' => 'POST'],
-	   ['name' => 'page#close', 'url' => '/close', 'verb' => 'POST'],
     ]
 ];

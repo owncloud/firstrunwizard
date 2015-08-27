@@ -13,7 +13,7 @@
 #app h3 {
 	color: 	#555555;
 	font-size: 15px;
-	margin: 10px 0 0;
+	margin: 5px 0 5px;
 }
 #firstrunwizard-left {
 	text-align: center;
@@ -22,6 +22,9 @@
     float: left;
     height: 100%;
     width: 250px;	
+}
+#content-wrapper {
+	padding-top: 0px
 }
 .button {
 	display: inline-block;

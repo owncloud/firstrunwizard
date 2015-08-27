@@ -4,8 +4,8 @@
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
  *
- * @author Your Name <mail@example.com>
- * @copyright Your Name 2015
+ * @author Renaud Fortier <renaud.fortier@fsaa.ulaval.ca>
+ * @copyright Renaud Fortier 2015
  */
 
 'use strict';
@@ -183,17 +183,5 @@
 		$(document).on('focusout', '#displayname', changeValues);
 		$(document).on('focusout', '#email', changeValues);
 		
-		$("#app").dialog({
-			height: 650,
-			width: 1000,
-			closeOnEscape: false,
-			modal: true,
-			close: function() {
-				var url = OC.generateUrl('/apps/firstrunwizard/close');
-				$.post(url, function(response) {
-					$(location).attr('href', response.defaultPageUrl);
-				});
-			}
-		});
 	});
 })(jQuery, OC);

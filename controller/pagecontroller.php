@@ -128,13 +128,4 @@ class PageController extends Controller {
 				'status' => 'success']);
 		}
 	}
-	
-	/**
-	 * @NoAdminRequired
-	 */
-	public function close() {
-		$this->config->setUserValue($this->userId, 'firstrunwizard', 'show', 0);
-		$redirect = $this->urlGenerator->getAbsoluteURL('/');
-		return new DataResponse(['defaultPageUrl' => $redirect]);
-	}
 }
