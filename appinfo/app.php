@@ -20,16 +20,22 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  * 
  */
+namespace OCA\FirstRunWizard\AppInfo;
 
+use OCA\FirstRunWizard\Config;
 
-OC::$CLASSPATH['OCA_FirstRunWizard\Config'] = 'firstrunwizard/lib/firstrunwizard.php';
+//\OCP\Util::addStyle('firstrunwizard', 'jcrop/jquery.Jcrop');
+//\OCP\Util::addScript('firstrunwizard', 'jcrop/jquery.Jcrop');
 
-OCP\Util::addStyle( 'firstrunwizard', 'colorbox');
-OCP\Util::addScript( 'firstrunwizard', 'jquery.colorbox');
-OCP\Util::addScript( 'firstrunwizard', 'firstrunwizard');
+\OCP\Util::addScript('files', 'jquery.fileupload');
+\OCP\Util::addScript('settings', 'personal');
 
-OCP\Util::addStyle('firstrunwizard', 'firstrunwizard');
+\OCP\Util::addStyle('firstrunwizard', 'colorbox');
+\OCP\Util::addScript('firstrunwizard', 'jquery.colorbox');
 
-if(\OCP\User::isLoggedIn() and \OCA_FirstRunWizard\Config::isenabled()){
-	OCP\Util::addScript( 'firstrunwizard', 'activate');
+\OCP\Util::addStyle('firstrunwizard', 'firstrunwizard');
+\OCP\Util::addScript('firstrunwizard', 'firstrunwizard');
+
+if(\OCP\User::isLoggedIn() and Config::isenabled()){
+	\OCP\Util::addScript( 'firstrunwizard', 'activate');
 }

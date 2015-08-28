@@ -22,10 +22,10 @@
  */
 
 
-namespace OCA_FirstRunWizard;
+namespace OCA\FirstRunWizard;
 
 class Config {
-
+	
 	/**
 	* @brief Disable the FirstRunWizard
 	*/
@@ -49,7 +49,7 @@ class Config {
 		if($conf==1) {
 			return(true);
 		}else{
-			return(false);
+			return(true);
 		}
 	}
 
