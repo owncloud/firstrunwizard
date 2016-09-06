@@ -19,20 +19,19 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-namespace OCA\FirstRunWizard;
+namespace OCA\FirstRunWizard\AppInfo;
 
-use OCP\Util;
+style('firstrunwizard', 'colorbox');
+script('firstrunwizard', 'jquery.colorbox');
+script('firstrunwizard', 'firstrunwizard');
+style('firstrunwizard', 'firstrunwizard');
 
-Util::addStyle('firstrunwizard', 'colorbox');
-Util::addScript('firstrunwizard', 'jquery.colorbox');
-Util::addScript('firstrunwizard', 'firstrunwizard');
-
-Util::addStyle('firstrunwizard', 'firstrunwizard');
-
-$config = \OC::$server->getConfig();
-$userSession = \OC::$server->getUserSession();
-$firstRunConfig = new Config($config, $userSession);
-
-if ($userSession->isLoggedIn() && $firstRunConfig->isEnabled()) {
-	Util::addScript( 'firstrunwizard', 'activate');
+if (\OCP\User::isLoggedIn()) {
+	$config = \OC::$server->getConfig();
+	$user = \OC::$server->getUserSession()->getUser();
+	
+	if ($config->getUserValue($user->getUID() , 'firstrunwizard' , 'show' , '1' ) === '1'){
+		script('firstrunwizard', 'activate');
+		$config->setUserValue($user->getUID() , 'firstrunwizard' , 'show' , '0' );
+	}
 }
