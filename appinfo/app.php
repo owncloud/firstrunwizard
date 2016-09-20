@@ -26,13 +26,20 @@ use OCP\Util;
 Util::addStyle('firstrunwizard', 'colorbox');
 Util::addScript('firstrunwizard', 'jquery.colorbox');
 Util::addScript('firstrunwizard', 'firstrunwizard');
-
 Util::addStyle('firstrunwizard', 'firstrunwizard');
 
-$config = \OC::$server->getConfig();
-$userSession = \OC::$server->getUserSession();
-$firstRunConfig = new Config($config, $userSession);
+// only load when the file app displays
+$eventDispatcher = \OC::$server->getEventDispatcher();
+$eventDispatcher->addListener(
+	'OCA\Files::loadAdditionalScripts',
+	function() {
+		$config = \OC::$server->getConfig();
+		$userSession = \OC::$server->getUserSession();
+		$firstRunConfig = new Config($config, $userSession);
 
-if ($userSession->isLoggedIn() && $firstRunConfig->isEnabled()) {
-	Util::addScript( 'firstrunwizard', 'activate');
-}
+		if ($userSession->isLoggedIn() && $firstRunConfig->isEnabled()) {
+			Util::addScript( 'firstrunwizard', 'activate');
+		}
+	}
+);
+
