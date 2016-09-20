@@ -6,11 +6,6 @@ function showfirstrunwizard(){
 		width:"70%", 
 		height:"70%", 
 		href: OC.filePath('firstrunwizard', '', 'wizard.php'),
-		onComplete : function(){
-			if (!SVGSupport()) {
-				replaceSVG();
-			}
-		},
 		onClosed : function(){
 			$.ajax({
 			url: OC.filePath('firstrunwizard', 'ajax', 'disable.php'),
