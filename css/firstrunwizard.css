@@ -47,3 +47,6 @@
 	right: 0;
 	padding: 20px;
 }
+#cboxClose {
+	display: none;
+}
