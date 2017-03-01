@@ -46,14 +46,12 @@ class Util {
 	}
 
 	/**
-	 * mimic \OC_Util::getEditionString()
+	 * \OC_Util::getEditionString() from global namespace 
+	 * (core:lib/private/legacy/util.php)
 	 * @return string
 	 */
 	public function getEdition() {
-		if ($this->appManager->isEnabledForUser('enterprise_key')) {
-			return 'Enterprise';
-		}
-		return '';
+		return \OC_Util::getEditionString();
 	}
 
 	/**

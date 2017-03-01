@@ -7,31 +7,13 @@ use OCA\FirstRunWizard\Util;
 class UtilTest extends \PHPUnit_Framework_TestCase {
 
 	/**
-	 * @dataProvider getEditionData
+	 * same code as in core: tests/lib/UtilTest.php
 	 */
-	public function testGetEdition($isEnterpriseKeyEnabled, $string) {
-		$appManager = $this->getMockBuilder('\OCP\App\IAppManager')
-			->disableOriginalConstructor()->getMock();
-		$config = $this->getMockBuilder('\OCP\IConfig')
-			->disableOriginalConstructor()->getMock();
-		$defaults = $this->getMockBuilder('\OCP\Defaults')
-			->disableOriginalConstructor()->getMock();
-
-		$appManager->expects($this->once())
-			->method('isEnabledForUser')
-			->with('enterprise_key')
-			->will($this->returnValue($isEnterpriseKeyEnabled));
-
-		$util = new Util($appManager, $config, $defaults);
-		$this->assertEquals($string, $util->getEdition());
+	public function testGetEditionString() {
+		$edition = \OC_Util::getEditionString();
+		$this->assertTrue(is_string($edition));
 	}
 
-	public function getEditionData() {
-		return [
-			[true, 'Enterprise'],
-			[false, ''],
-		];
-	}
 
 	/**
 	 * @dataProvider getSyncClientUrlsData
