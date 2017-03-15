@@ -4,7 +4,7 @@
 	<img class="svg" src="<?php print_unescaped(OCP\Util::imagePath('core', 'actions/close.svg')); ?>">
 </a>
 <h1><?php p($l->t('A safe home for all your data')); ?></h1>
-<?php if ($_['edition'] === ''): ?>
+<?php if ($_['edition'] === \OC_Util::EDITION_COMMUNITY): ?>
 <p><?php p($l->t('Access & share your files, calendars, contacts, mail & more from any device, on your terms'));?></p>
 <?php else: ?>
 <p><?php p($theme->getSlogan()); ?></p>
