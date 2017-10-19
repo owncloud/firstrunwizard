@@ -2,6 +2,7 @@ OC.L10N.register(
     "firstrunwizard",
     {
     "A safe home for all your data" : "Bezpieczne miejsce dla wszystkich Twoich informacji",
+    "Access & share your files, calendars, contacts, mail & more from any device, on your terms" : "Przeglądaj i udostępnia swoje pliki, kalendarze, kontakty maile oraz wiele więcej ze swojego komputera na własnych zasadach",
     "Get the apps to sync your files" : "Pobierz aplikacje aby zsynchronizować swoje pliki",
     "Desktop client" : "Klient na komputer",
     "Android app" : "Aplikacja Android",
