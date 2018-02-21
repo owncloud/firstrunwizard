@@ -1,2 +1,5 @@
+# build dir
+/build
+
 # test coverage
 tests/clover.xml
