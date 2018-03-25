@@ -4,7 +4,7 @@ OC.L10N.register(
     "A safe home for all your data" : "ปลอดภัยสำหรับสำหรับข้อมูลทั้งหมดของคุณ",
     "Access & share your files, calendars, contacts, mail & more from any device, on your terms" : "เข้าถึงและไฟล์ไฟล์ของคุณ, ปฏิทิน, รายชื่อ, อีเมลและอื่นๆ จากอุปกรณ์ใดก็ได้ บนเงื่อนไขของคุณ",
     "Get the apps to sync your files" : "ใช้แอพพลิเคชันเพื่อประสานไฟล์ข้อมูลของคุณ",
-    "Desktop client" : "เดสก์ทอปผู้ใช้",
+    "Desktop client" : "โปรแกรมบนเดสก์ท็อป",
     "Android app" : "แอพฯ แอนดรอยด์",
     "iOS app" : "แอพฯ IOS",
     "Connect your desktop apps to %s" : "เชื่อมต่อแอพพลิเคชันเดสก์ทอปของคุณไปยัง %s",
