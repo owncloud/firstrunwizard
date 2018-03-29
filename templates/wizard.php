@@ -16,7 +16,7 @@
 		alt="<?php p($l->t('Desktop client'));?>" />
 </a>
 <a target="_blank" href="<?php p($_['clients']['android']); ?>">
-	<img src="<?php print_unescaped(OCP\Util::imagePath('core', 'googleplay.svg')); ?>"
+	<img src="<?php print_unescaped(OCP\Util::imagePath('core', 'googleplay.png')); ?>"
 		alt="<?php p($l->t('Android app'));?>" style="height:60px"/>
 </a>
 <a target="_blank" href="<?php p($_['clients']['ios']); ?>">
