@@ -9,5 +9,5 @@
     "Documentation" : "مستندسازی",
     "Access files via WebDAV" : "دسترسی فایل ها از طریق WebDAV",
     "There’s more information in the <a target=\"_blank\" href=\"%s\">documentation</a> and on our <a target=\"_blank\" href=\"http://owncloud.org\">website</a>." : "اطلاعات بیشتر در بخش <a target=\"_blank\" href=\"%s\"> مستندات </a> و در <a target=\"_blank\" href=\"http://owncloud.org\"> وبسایت </a> قرار دارد."
-},"pluralForm" :"nplurals=1; plural=0;"
+},"pluralForm" :"nplurals=2; plural=((n<=1 && n>= 0) ? 1);"
 }

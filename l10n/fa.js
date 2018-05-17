@@ -12,4 +12,4 @@ OC.L10N.register(
     "Access files via WebDAV" : "دسترسی فایل ها از طریق WebDAV",
     "There’s more information in the <a target=\"_blank\" href=\"%s\">documentation</a> and on our <a target=\"_blank\" href=\"http://owncloud.org\">website</a>." : "اطلاعات بیشتر در بخش <a target=\"_blank\" href=\"%s\"> مستندات </a> و در <a target=\"_blank\" href=\"http://owncloud.org\"> وبسایت </a> قرار دارد."
 },
-"nplurals=1; plural=0;");
+"nplurals=2; plural=((n<=1 && n>= 0) ? 1);");

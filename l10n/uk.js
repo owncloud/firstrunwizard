@@ -13,4 +13,4 @@ OC.L10N.register(
     "Access files via WebDAV" : "Доступ до файлів за допомогою WebDAV",
     "There’s more information in the <a target=\"_blank\" href=\"%s\">documentation</a> and on our <a target=\"_blank\" href=\"http://owncloud.org\">website</a>." : "Є більше інформації в <a target=\"_blank\" href=\"%s\">документації</a> і на нашому <a target=\"_blank\" href=\"http://owncloud.org\">сайті</a>."
 },
-"nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);");
+"nplurals=4; plural=( n % 1 == 0 && n % 10 =1 && n % 100 != 11) ? 1 : ( n %1 == 0 && ( n >= 2 && n <=4) && ( n % 100 <12 || n % 100 > 14)) ? 3 : ( n % 1 ==0 && (n% 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14));");
