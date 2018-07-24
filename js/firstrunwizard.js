@@ -15,10 +15,5 @@ function showfirstrunwizard(){
 	});
 }
 
-$('#showWizard').live('click', function () {	
-	showfirstrunwizard();
-});
-
-$('#closeWizard').live('click', function () {	
-		$.colorbox.close();
-});
+$(document).on('click', '#showWizard', showfirstrunwizard);
+$(document).on('click', '#closeWizard', $.colorbox.close);
