@@ -11,7 +11,11 @@ The First run wizard can be customized to meet specific design goals, or to chan
 		<owncloud min-version="10" max-version="10" />
 	</dependencies>
 	<version>1.1.1</version>
+	<namespace>FirstRunWizard</namespace>
 	<shipped>true</shipped>
 	<default_enable/>
 	<ocsid>166055</ocsid>
+	<commands>
+		<command>OCA\FirstRunWizard\Command\ResetAll</command>
+	</commands>
 </info>
