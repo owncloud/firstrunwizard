@@ -8,9 +8,9 @@ The First run wizard can be customized to meet specific design goals, or to chan
 	<licence>AGPL</licence>
 	<author>Frank Karlitschek, Jan-Christoph Borchardt</author>
 	<dependencies>
-		<owncloud min-version="10.0" max-version="10.1" />
+		<owncloud min-version="10" max-version="10" />
 	</dependencies>
-	<version>1.1</version>
+	<version>1.1.1</version>
 	<shipped>true</shipped>
 	<default_enable/>
 	<ocsid>166055</ocsid>
