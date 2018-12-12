@@ -25,7 +25,7 @@
 </a>
 
 <?php if ($_['edition'] === \OC_Util::EDITION_COMMUNITY): ?>
-<h2><?php p($l->t('Connect your desktop apps to %s', array($theme->getName()))); ?></h2>
+<h2><?php p($l->t('Connect your desktop apps to %s', [$theme->getName()])); ?></h2>
 <a target="_blank" class="button" href="<?php p(link_to_docs('user-sync-calendars')) ?>">
 	<img class="appsmall appsmall-calendar svg" alt=""
 		src="<?php print_unescaped(OCP\Util::imagePath('core', 'places/calendar-dark.svg')); ?>" />
@@ -50,7 +50,7 @@
 
 <p class="footnote">
 <?php if ($_['edition'] === ''): ?>
-<?php print_unescaped($l->t('There’s more information in the <a target="_blank" href="%s">documentation</a> and on our <a target="_blank" href="http://owncloud.org">website</a>.', array(link_to_docs('user_manual')))); ?><br>
+<?php print_unescaped($l->t('There’s more information in the <a target="_blank" href="%s">documentation</a> and on our <a target="_blank" href="http://owncloud.org">website</a>.', [link_to_docs('user_manual')])); ?><br>
 <?php print_unescaped($l->t('If you like ownCloud,
 	<a href="mailto:?subject=ownCloud
 		&body=ownCloud is a great open software to sync and share your files.
@@ -59,7 +59,7 @@
 	and <a href="http://owncloud.org/promote"
 		target="_blank">spread the word</a>!')); ?>
 <?php else: ?>
-© <?php p(date('Y')) ?> <a href="<?php p($theme->getBaseUrl()); ?>" target="_blank"><?php p($theme->getEntity()); ?></a>
+© <?php p(\date('Y')) ?> <a href="<?php p($theme->getBaseUrl()); ?>" target="_blank"><?php p($theme->getEntity()); ?></a>
 <?php endif; ?>
 </p>
 
