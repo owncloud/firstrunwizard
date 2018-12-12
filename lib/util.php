@@ -27,7 +27,6 @@ use OCP\Defaults;
 use OCP\IConfig;
 
 class Util {
-
 	protected $appManager;
 
 	protected $config;
@@ -46,7 +45,7 @@ class Util {
 	}
 
 	/**
-	 * \OC_Util::getEditionString() from global namespace 
+	 * \OC_Util::getEditionString() from global namespace
 	 * (core:lib/private/legacy/util.php)
 	 * @return string
 	 */
@@ -58,10 +57,10 @@ class Util {
 	 * @return array
 	 */
 	public function getSyncClientUrls() {
-		return array(
+		return [
 			'desktop' => $this->config->getSystemValue('customclient_desktop', $this->defaults->getSyncClientUrl()),
 			'android' => $this->config->getSystemValue('customclient_android', $this->defaults->getAndroidClientUrl()),
 			'ios'     => $this->config->getSystemValue('customclient_ios', $this->defaults->getiOSClientUrl())
-		);
+		];
 	}
 }
