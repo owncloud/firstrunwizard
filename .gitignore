@@ -1,5 +1,16 @@
 # build dir
-/build
+/build/
+/l10n/.transifexrc
+.php_cs.cache
 
-# test coverage
-tests/clover.xml
+# Composer
+vendor/
+vendor-bin/**/vendor
+vendor-bin/**/composer.lock
+
+# Mac OS
+.DS_Store
+
+# Tests - auto-generated files
+/tests/acceptance/output
+/tests/output

@@ -37,7 +37,7 @@ $defaults = new Defaults();
 $util = new Util($appManager, $config, $defaults);
 
 $tmpl = new Template('firstrunwizard', 'wizard', '');
-$tmpl->assign('logo', CoreUtil::linkTo('core','img/logo-inverted.svg'));
+$tmpl->assign('logo', CoreUtil::linkTo('core', 'img/logo-inverted.svg'));
 $tmpl->assign('clients', $util->getSyncClientUrls());
 $tmpl->assign('edition', $util->getEdition());
 $tmpl->printPage();

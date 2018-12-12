@@ -14,9 +14,8 @@ class UtilTest extends \PHPUnit_Framework_TestCase {
 	 */
 	public function testGetEditionString() {
 		$edition = \OC_Util::getEditionString();
-		$this->assertTrue(is_string($edition));
+		$this->assertTrue(\is_string($edition));
 	}
-
 
 	/**
 	 * @dataProvider getSyncClientUrlsData

@@ -26,7 +26,6 @@ use OCP\IConfig;
 use OCP\IUserSession;
 
 class Config {
-
 	protected $config;
 
 	protected $userSession;
@@ -68,7 +67,7 @@ class Config {
 		$user = $this->userSession->getUser();
 		if ($user) {
 			$conf = $this->config->getUserValue($user->getUID(), 'firstrunwizard', 'show', 1);
-			return (intval($conf) === 1);
+			return (\intval($conf) === 1);
 		} else {
 			return false;
 		}
