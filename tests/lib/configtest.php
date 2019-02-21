@@ -4,14 +4,29 @@ namespace OCA\FirstRunWizard\Tests;
 
 use OCA\FirstRunWizard\Config;
 
+/**
+ * Class ConfigTest
+ *
+ * @package OCA\FirstRunWizard\Tests
+ */
 class ConfigTest extends \PHPUnit_Framework_TestCase {
 
 	/**
+	 * @param bool $isUserAvailable
+	 *
 	 * @dataProvider enableDisableData
+	 *
+	 * @return void
 	 */
 	public function testEnable($isUserAvailable) {
+		/**
+		 * @var IConfig | \PHPUnit_Framework_MockObject_MockObject $config
+		 */
 		$config = $this->getMockBuilder('\OCP\IConfig')
 			->disableOriginalConstructor()->getMock();
+		/**
+		 * @var IUserSession | \PHPUnit_Framework_MockObject_MockObject $userSession
+		 */
 		$userSession = $this->getMockBuilder('\OCP\IUserSession')
 			->disableOriginalConstructor()->getMock();
 		$user = $this->getMockBuilder('\OCP\IUser')
@@ -47,11 +62,21 @@ class ConfigTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
+	 * @param bool $isUserAvailable
+	 *
+	 * @return void
+	 *
 	 * @dataProvider enableDisableData
 	 */
 	public function testDisable($isUserAvailable) {
+		/**
+		 * @var IConfig | \PHPUnit_Framework_MockObject_MockObject $config
+		 */
 		$config = $this->getMockBuilder('\OCP\IConfig')
 			->disableOriginalConstructor()->getMock();
+		/**
+		 * @var IUserSession | \PHPUnit_Framework_MockObject_MockObject $userSession
+		 */
 		$userSession = $this->getMockBuilder('\OCP\IUserSession')
 			->disableOriginalConstructor()->getMock();
 		$user = $this->getMockBuilder('\OCP\IUser')
@@ -86,6 +111,9 @@ class ConfigTest extends \PHPUnit_Framework_TestCase {
 		}
 	}
 
+	/**
+	 * @return array
+	 */
 	public function enableDisableData() {
 		return [
 			[true],
@@ -94,11 +122,21 @@ class ConfigTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
+	 * @param bool $isEnabled
+	 *
+	 * @return void
+	 *
 	 * @dataProvider isEnabledData
 	 */
 	public function testIsEnabled($isEnabled) {
+		/**
+		 * @var IConfig | \PHPUnit_Framework_MockObject_MockObject $config
+		 */
 		$config = $this->getMockBuilder('\OCP\IConfig')
 			->disableOriginalConstructor()->getMock();
+		/**
+		 * @var IUserSession | \PHPUnit_Framework_MockObject_MockObject $userSession
+		 */
 		$userSession = $this->getMockBuilder('\OCP\IUserSession')
 			->disableOriginalConstructor()->getMock();
 		$user = $this->getMockBuilder('\OCP\IUser')
@@ -150,11 +188,53 @@ class ConfigTest extends \PHPUnit_Framework_TestCase {
 		}
 	}
 
+	/**
+	 * @return array
+	 */
 	public function isEnabledData() {
 		return [
 			[true],
 			[false],
 			[null],
 		];
+	}
+
+	/**
+	 * Test that the config is reset for all users
+	 *
+	 * @return void
+	 *
+	 * @throws \OCP\PreConditionNotMetException
+	 */
+	public function testResetAllUsers() {
+		$users = [];
+		$users[] = $this->getMockBuilder('\OCP\IUser')
+			->disableOriginalConstructor()->getMock();
+		$users[] = $this->getMockBuilder('\OCP\IUser')
+			->disableOriginalConstructor()->getMock();
+		/**
+		 * @var IConfig | \PHPUnit_Framework_MockObject_MockObject $config
+		 */
+		$config = $this->getMockBuilder('\OCP\IConfig')
+			->disableOriginalConstructor()->getMock();
+		$config->method('getUsersForUserValue')
+			->with('firstrunwizard', 'show', 0)
+			->willReturn($users);
+		$config->expects($this->exactly(\count($users)))
+			->method('setUserValue');
+		/**
+		 * @var IUserSession | \PHPUnit_Framework_MockObject_MockObject $userSession
+		 */
+		$userSession = $this->getMockBuilder('\OCP\IUserSession')
+			->disableOriginalConstructor()->getMock();
+		$c = new Config($config, $userSession);
+		// Create a fake callback to check it gets called
+		$mock = $this->getMockBuilder('stdClass');
+		$mock->setMethods(['callback']);
+		$mock = $mock->getMock();
+		$mock->expects($this->exactly(\count($users)))
+			->method('callback')
+			->will($this->returnValue(true));
+		$c->resetAllUsers([$mock, 'callback']);
 	}
 }
