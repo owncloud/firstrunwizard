@@ -2,7 +2,7 @@ workspace:
   base: /var/www/owncloud
   path: apps/firstrunwizard
 
-branches: [master, release*, release/*]
+branches: [master, release*, release/*, stable10]
 
 pipeline:
   install-core:
