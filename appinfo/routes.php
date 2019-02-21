@@ -14,4 +14,3 @@ $this->create('firstrunwizard_disable', 'ajax/disable.php')
 	->actionInclude('firstrunwizard/ajax/disable.php');
 $this->create('firstrunwizard_wizard', 'wizard.php')
 	->actionInclude('firstrunwizard/wizard.php');
-
