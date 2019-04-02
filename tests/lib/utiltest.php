@@ -4,7 +4,7 @@ namespace OCA\FirstRunWizard\Tests;
 
 use OCA\FirstRunWizard\Util;
 
-class UtilTest extends \PHPUnit_Framework_TestCase {
+class UtilTest extends \PHPUnit\Framework\TestCase {
 
 	/**
 	 * same code as in core: tests/lib/UtilTest.php
@@ -20,8 +20,10 @@ class UtilTest extends \PHPUnit_Framework_TestCase {
 	public function testGetSyncClientUrls($configValues, $defaultValues) {
 		$appManager = $this->getMockBuilder('\OCP\App\IAppManager')
 			->disableOriginalConstructor()->getMock();
+		/** @var IConfig | \PHPUnit\Framework\MockObject\MockObject $config */
 		$config = $this->getMockBuilder('\OCP\IConfig')
 			->disableOriginalConstructor()->getMock();
+		/** @var Defaults | \PHPUnit\Framework\MockObject\MockObject $defaults */
 		$defaults = $this->getMockBuilder('\OCP\Defaults')
 			->disableOriginalConstructor()->getMock();
 
