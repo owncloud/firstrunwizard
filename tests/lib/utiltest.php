@@ -7,7 +7,7 @@ use OCP\App\IAppManager;
 use OCP\Defaults;
 use OCP\IConfig;
 
-class UtilTest extends \PHPUnit_Framework_TestCase {
+class UtilTest extends \PHPUnit\Framework\TestCase {
 
 	/**
 	 * same code as in core: tests/lib/UtilTest.php
@@ -24,10 +24,10 @@ class UtilTest extends \PHPUnit_Framework_TestCase {
 		/** @var IAppManager $appManager */
 		$appManager = $this->getMockBuilder('\OCP\App\IAppManager')
 			->disableOriginalConstructor()->getMock();
-		/** @var IConfig | \PHPUnit_Framework_MockObject_MockObject $config */
+		/** @var IConfig | \PHPUnit\Framework\MockObject\MockObject $config */
 		$config = $this->getMockBuilder('\OCP\IConfig')
 			->disableOriginalConstructor()->getMock();
-		/** @var Defaults | \PHPUnit_Framework_MockObject_MockObject $defaults */
+		/** @var Defaults | \PHPUnit\Framework\MockObject\MockObject $defaults */
 		$defaults = $this->getMockBuilder('\OCP\Defaults')
 			->disableOriginalConstructor()->getMock();
 
