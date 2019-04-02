@@ -6,11 +6,11 @@
 The First run wizard can be customized to meet specific design goals, or to change links and messages. Create an appropriate theme following the Theming documentation, and changes to the look and feel of this Wizard are simple. More information is available in the First run wizard documentation, as well as the theming documentation.
 </description>
 	<licence>AGPL</licence>
-	<author>Frank Karlitschek, Jan-Christoph Borchardt</author>
+	<author>Frank Karlitschek, Jan-Christoph Borchardt, Tom Needham</author>
 	<dependencies>
 		<owncloud min-version="10.2" max-version="11" />
 	</dependencies>
-	<version>1.1.1</version>
+	<version>1.2.0</version>
 	<namespace>FirstRunWizard</namespace>
 	<default_enable/>
 	<commands>

@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [1.2.0]
+
+### Added
+
+- Add occ command to reset for all users - [#83](https://github.com/owncloud/firstrunwizard/issues/83)
+
+### Changed
+
+- Decouple from core, switching to own release cycle
+
+## [1.1.1]
+
+### Changed
+
+- Set max version to 10
+
 ## [1.1] - 2014-07-07
 
 ### Added
@@ -25,3 +41,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 ### Added
 
  - Initial implementation
+
+[1.2.0]: https://github.com/owncloud/firstrunwizard/compare/v1.1.1...v1.2.0
+[1.1.1]: https://github.com/owncloud/firstrunwizard/compare/v1.1...v1.1.1
