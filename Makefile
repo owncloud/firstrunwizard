@@ -15,6 +15,9 @@ source_package_name=$(source_build_directory)/$(app_name)
 appstore_build_directory=$(CURDIR)/build/artifacts/appstore
 appstore_package_name=$(appstore_build_directory)/$(app_name)
 
+# dependency folders (leave empty if not required)
+acceptance_test_deps=vendor-bin/behat/vendor
+
 # signing
 occ=$(CURDIR)/../../occ
 private_key=$(HOME)/.owncloud/certificates/$(app_name).key
@@ -36,6 +39,7 @@ PHPUNITDBG=phpdbg -qrr -d memory_limit=4096M -d zend.enable_gc=0 "$(PWD)/../../l
 PHP_CS_FIXER=php -d zend.enable_gc=0 vendor-bin/owncloud-codestyle/vendor/bin/php-cs-fixer
 PHAN=php -d zend.enable_gc=0 vendor-bin/phan/vendor/bin/phan
 PHPSTAN=php -d zend.enable_gc=0 vendor-bin/phpstan/vendor/bin/phpstan
+BEHAT_BIN=vendor-bin/behat/vendor/bin/behat
 
 all: appstore
 
@@ -121,8 +125,8 @@ test-php-phpstan: vendor-bin/phpstan/vendor
 
 .PHONY: test-acceptance-webui
 test-acceptance-webui: ## Run webUI acceptance tests
-test-acceptance-webui:
-	../../tests/acceptance/run.sh --remote --type webUI
+test-acceptance-webui: $(acceptance_test_deps)
+	BEHAT_BIN=$(BEHAT_BIN) ../../tests/acceptance/run.sh --remote --type webUI
 
 #
 # Dependency management
@@ -154,3 +158,9 @@ vendor-bin/phpstan/vendor: vendor/bamarni/composer-bin-plugin vendor-bin/phpstan
 
 vendor-bin/phpstan/composer.lock: vendor-bin/phpstan/composer.json
 	@echo phpstan composer.lock is not up to date.
+
+vendor-bin/behat/vendor: vendor/bamarni/composer-bin-plugin vendor-bin/behat/composer.lock
+	composer bin behat install --no-progress
+
+vendor-bin/behat/composer.lock: vendor-bin/behat/composer.json
+	@echo behat composer.lock is not up to date.
