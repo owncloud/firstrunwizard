@@ -17,6 +17,7 @@ default:
             regularUserPassword: 123456
             ocPath: apps/testing/api/v1/occ
         - OccContext:
+        - WebUIPersonalGeneralSettingsContext:
 
   extensions:
       jarnaiz\JUnitFormatter\JUnitFormatterExtension:
