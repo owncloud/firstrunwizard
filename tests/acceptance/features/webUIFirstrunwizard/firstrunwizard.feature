@@ -8,6 +8,7 @@ Feature:  first login wizard
     Given user "user1" has been created with default attributes
     When user "user1" logs in using the webUI
     Then the user should see the firstrunwizard popup message
+    And the heading of the popup should be "A safe home for all your data"
 
   Scenario: Previously created user logs into ownCloud
     Given user "user1" has been created with default attributes

@@ -31,8 +31,8 @@ use \Behat\Mink\Element\NodeElement;
 
 class FirstrunwizardPage extends OwncloudPage {
 	protected $closeWizardXpath = "//*[@id='closeWizard']";
-	protected $firstrunwizardPopupXpath = "//*[@id='firstrunwizard']";
-
+	protected $headingMessageXpath = "//*[@id='firstrunwizard']/h1";
+	protected $firstRunWizardXpath = "//*[@id='firstrunwizard']";
 	/**
 	 * Closes Popup message from Firstrunwizard
 	 *
@@ -40,7 +40,11 @@ class FirstrunwizardPage extends OwncloudPage {
 	 */
 	public function closePopup() {
 		$closeButton = $this->find("xpath", $this->closeWizardXpath);
-		$this->assertElementNotNull($closeButton, "no close button");
+		$this->assertElementNotNull(
+			$closeButton,
+			__METHOD__ .
+			"Could not find close button xpath: '$this->closeWizardXpath'"
+		);
 		$closeButton->click();
 		$this->waitTillElementIsNull($this->closeWizardXpath);
 	}
@@ -49,6 +53,22 @@ class FirstrunwizardPage extends OwncloudPage {
 	 * @return NodeElement|null
 	 */
 	public function getWizardPopup() {
-		return $this->find("xpath", $this->firstrunwizardPopupXpath);
+		return $this->find("xpath", $this->firstRunWizardXpath);
+	}
+
+	/**
+	 * Returns the message from firstrunwizard at heading
+	 *
+	 * @return string
+	 */
+	public function getHeadingMessage() {
+		$assertHeadingMessage = $this->find('xpath', $this->headingMessageXpath);
+		$this->assertElementNotNull(
+			$assertHeadingMessage,
+			__METHOD__ .
+			"Could not find heading element xpath: '$this->headingMessageXpath'"
+		);
+		$headingMessage = $assertHeadingMessage->getText();
+		return $headingMessage;
 	}
 }
