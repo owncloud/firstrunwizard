@@ -23,8 +23,10 @@
 use Behat\Behat\Context\Context;
 use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 use Behat\MinkExtension\Context\RawMinkContext;
-use Page\FirstrunwizardPage;
+use Page\FirstRunWizardPage;
 use TestHelpers\SetupHelper;
+use Page\PersonalGeneralSettingsPageFirstRunWizard;
+use Behat\Mink\Session;
 
 require_once 'bootstrap.php';
 
@@ -44,9 +46,14 @@ class WebUIFirstrunwizardContext extends RawMinkContext implements Context {
 	private $webUIGeneralContext;
 
 	/**
-	 * @var FirstrunwizardPage
+	 * @var FirstRunWizardPage
 	 */
-	private $firstrunwizardPage;
+	private $firstRunWizardPage;
+
+	/**
+	 * @var PersonalGeneralSettingsPageFirstRunWizard
+	 */
+	private $personalGeneralSettingsPageFirstRunWizard;
 
 	/**
 	 * @var string
@@ -61,10 +68,15 @@ class WebUIFirstrunwizardContext extends RawMinkContext implements Context {
 	/**
 	 * WebUIFirstrunwizardContext constructor.
 	 *
-	 * @param FirstrunwizardPage $firstRunWizardPage
+	 * @param FirstRunWizardPage $firstRunWizardPage
+	 * @param PersonalGeneralSettingsPageFirstRunWizard $personalGeneralSettingsPageFirstRunWizard
 	 */
-	public function __construct(FirstrunwizardPage $firstRunWizardPage) {
+	public function __construct(
+		FirstRunWizardPage $firstRunWizardPage,
+		PersonalGeneralSettingsPageFirstRunWizard $personalGeneralSettingsPageFirstRunWizard
+	) {
 		$this->firstRunWizardPage = $firstRunWizardPage;
+		$this->personalGeneralSettingsPageFirstRunWizard = $personalGeneralSettingsPageFirstRunWizard;
 	}
 
 	/**
@@ -75,11 +87,11 @@ class WebUIFirstrunwizardContext extends RawMinkContext implements Context {
 	 * @return void
 	 */
 	public function theUserShouldSeeTheFirstrunwizardPopupMessage() {
-		$firstrunwizardScreen = $this->firstRunWizardPage->getWizardPopup();
-		if ($firstrunwizardScreen === null) {
+		$firstRunWizardScreen = $this->firstRunWizardPage->getWizardPopup();
+		if ($firstRunWizardScreen === null) {
 			throw new Exception("Could not find firstrunwizard popup");
 		}
-		if ($firstrunwizardScreen->isVisible() === false) {
+		if ($firstRunWizardScreen->isVisible() === false) {
 			throw new Exception("Firstrunwizard popup is not visible");
 		}
 	}
@@ -109,6 +121,15 @@ class WebUIFirstrunwizardContext extends RawMinkContext implements Context {
 	 */
 	public function closeDialogBox() {
 		$this->firstRunWizardPage->closePopup();
+	}
+
+	/**
+	 * @When the user requests to show firstrunwizard popup in settings page
+	 *
+	 * @return void
+	 */
+	public function requestToShowFirstRunWizardPopupInSettingsPage() {
+		$this->personalGeneralSettingsPageFirstRunWizard->showFirstRunWizardPopupInSettingsPage($this->getSession());
 	}
 
 	/**

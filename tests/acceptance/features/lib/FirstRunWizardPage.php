@@ -3,7 +3,7 @@
  * ownCloud
  *
  * @author Bhawana Prasain  <bhawana.prs@gmail.com>
- * @copyright Copyright (c)  Bhawana Prasain 2019 bhawana.prs@gmail.com
+ * @copyright Copyright (c) Bhawana Prasain 2019 bhawana.prs@gmail.com
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -22,17 +22,19 @@
 
 namespace Page;
 
-use \Behat\Mink\Element\NodeElement;
+use Behat\Mink\Session;
+use Behat\Mink\Element\NodeElement;
 
 /**
  * Page object for Firstrunwizard
  *
  */
 
-class FirstrunwizardPage extends OwncloudPage {
+class FirstRunWizardPage extends OwncloudPage {
 	protected $closeWizardXpath = "//*[@id='closeWizard']";
 	protected $headingMessageXpath = "//*[@id='firstrunwizard']/h1";
 	protected $firstRunWizardXpath = "//*[@id='firstrunwizard']";
+
 	/**
 	 * Closes Popup message from Firstrunwizard
 	 *
@@ -47,6 +49,19 @@ class FirstrunwizardPage extends OwncloudPage {
 		);
 		$closeButton->click();
 		$this->waitTillElementIsNull($this->closeWizardXpath);
+	}
+
+	/**
+	 * @param Session $session
+	 * @param int $timeout_msec
+	 *
+	 * @return NodeElement
+	 */
+	public function waitTillPageIsLoaded(
+		Session $session,
+		$timeout_msec = STANDARD_UI_WAIT_TIMEOUT_MILLISEC
+	) {
+		$this->waitTillXpathIsVisible($this->closeWizardXpath, $timeout_msec);
 	}
 
 	/**

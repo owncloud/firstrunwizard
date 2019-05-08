@@ -16,3 +16,11 @@ Feature:  first login wizard
     And the user closes the firstrunwizard popup message
     And the user re-logs in as "user1" using the webUI
     Then the user should not see the firstrunwizard popup message
+
+  Scenario: User requests to show firstrunwizard popup in settings page
+    Given user "user1" has been created with default attributes
+    And user "user1" has logged in using the webUI
+    And the user has closed the firstrunwizard popup message
+    And the user has browsed to the personal general settings page
+    When the user requests to show firstrunwizard popup in settings page
+    Then the user should see the firstrunwizard popup message
