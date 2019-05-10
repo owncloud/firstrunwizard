@@ -61,7 +61,7 @@ class WebUIFirstrunwizardContext extends RawMinkContext implements Context {
 	/**
 	 * WebUIFirstrunwizardContext constructor.
 	 *
-	 * @param FirstrunwizardPage $firstrunwizardPage
+	 * @param FirstrunwizardPage $firstRunWizardPage
 	 */
 	public function __construct(FirstrunwizardPage $firstRunWizardPage) {
 		$this->firstRunWizardPage = $firstRunWizardPage;
@@ -114,7 +114,7 @@ class WebUIFirstrunwizardContext extends RawMinkContext implements Context {
 	/**
 	 * @Then the heading of the popup should be :expectedMessage
 	 *
-	 * @param $expectedMessage
+	 * @param string $expectedMessage
 	 *
 	 * @throws Exception
 	 * @return void
@@ -132,7 +132,7 @@ class WebUIFirstrunwizardContext extends RawMinkContext implements Context {
 	/**
 	 * @Given the administrator has changed the default popup message of firstrunwizard to :newMessage
 	 *
-	 * @param $newMessage
+	 * @param string $newMessage
 	 *
 	 * @return void
 	 * @throws Exception
@@ -149,7 +149,7 @@ class WebUIFirstrunwizardContext extends RawMinkContext implements Context {
 			$this->pathOfWizardFileFromServerRoot
 		);
 
-		$content ="<div id='firstrunwizard'><h1>$newMessage</h1></div>";
+		$content = "<div id='firstrunwizard'><h1>$newMessage</h1></div>";
 		SetupHelper::createFileOnServer(
 			$this->pathOfWizardFileFromServerRoot,
 			$content
