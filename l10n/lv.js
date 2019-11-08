@@ -1,0 +1,15 @@
+OC.L10N.register(
+    "firstrunwizard",
+    {
+    "A safe home for all your data" : "Droša vieta visiem jūsu datiem",
+    "Access & share your files, calendars, contacts, mail & more from any device, on your terms" : "Piekļūstiet un kopīgojiet failus, kalendārus, kontaktpersonas, e-pastu un citu, no jebkuras ierīces atbilstoši savām vajadzībām.",
+    "Get the apps to sync your files" : "Saņem lietotnes, lai sinhronizētu savas datnes",
+    "Desktop client" : "Darbvirsmas klients",
+    "Android app" : "Android lietotne",
+    "iOS app" : "iOS lietotne",
+    "Connect your Calendar" : "Savienojiet savu kalendāru",
+    "Connect your Contacts" : "Savienojiet savus kontaktus",
+    "Documentation" : "Dokumentācija",
+    "Access files via WebDAV" : "Piekļūstiet datnēm caur WebDAV"
+},
+"nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);");
