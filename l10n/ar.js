@@ -1,0 +1,18 @@
+OC.L10N.register(
+    "firstrunwizard",
+    {
+    "A safe home for all your data" : "مكان آمن لجميع بياناتك",
+    "Access & share your files, calendars, contacts, mail & more from any device, on your terms" : "يمكنك الوصول إلى الملفات، والتقاويم، وجهات الاتصال، والبريد، والمزيد، ومشاركتها من أي جهاز وفقًا لشروطك",
+    "Get the apps to sync your files" : "الحصول على تطبيقات لمزامنة ملفاتك",
+    "Desktop client" : "عميل سطح المكتب",
+    "Android app" : "تطبيق Android",
+    "iOS app" : "تطبيق iOS",
+    "Connect your desktop apps to %s" : "وصِّل تطبيقات سطح المكتب بـ %s",
+    "Connect your Calendar" : "توصيل تقويمك",
+    "Connect your Contacts" : "توصيل جهات اتصالك",
+    "Documentation" : "المستندات",
+    "Access files via WebDAV" : "الوصول إلى الملفات باستخدام WebDAV",
+    "There’s more information in the <a target=\"_blank\" href=\"%s\">documentation</a> and on our <a target=\"_blank\" href=\"http://owncloud.org\">website</a>." : "يتوفر مزيد من المعلومات في <a target=\"_blank\" href=\"%s\">المستندات</a> <a target=\"_blank\" href=\"http://owncloud.org\">وموقعنا على الويب</a>.",
+    "If you like ownCloud,\n\t<a href=\"mailto:?subject=ownCloud\n\t\t&body=ownCloud is a great open software to sync and share your files.\n\t\tYou can freely get it from http://owncloud.org\">\n\t\trecommend it to your friends</a>\n\tand <a href=\"http://owncloud.org/promote\"\n\t\ttarget=\"_blank\">spread the word</a>!" : "إذا أعجبك ownCloud، فإن \n\t<a href=\"mailto:?subject=ownCloud\n\t\t&body=ownCloud برنامج مفتوح مميز لمزامنة ملفاتك ومشاركتها.\n\t\tيمكنك الحصول عليه مجانًا من http://owncloud.org\">\n\t\tقم بتوصية أصدقائك باستخدامه</a>\n\t <a href=\"http://owncloud.org/promote\"\n\t\ttarget=\"_blank\">وانشر الخبر</a>!"
+},
+"nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;");
