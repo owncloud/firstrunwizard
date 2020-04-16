@@ -57,7 +57,7 @@ class Config {
 	public function enable() {
 		$user = $this->userSession->getUser();
 		if ($user) {
-			$this->config->setUserValue($user->getUID(), 'firstrunwizard', 'show', 1);
+			$this->config->setUserValue($user->getUID(), 'firstrunwizard', 'show', '1');
 		}
 	}
 
@@ -67,7 +67,7 @@ class Config {
 	public function disable() {
 		$user = $this->userSession->getUser();
 		if ($user) {
-			$this->config->setUserValue($user->getUID(), 'firstrunwizard', 'show', 0);
+			$this->config->setUserValue($user->getUID(), 'firstrunwizard', 'show', '0');
 		}
 	}
 
@@ -98,11 +98,11 @@ class Config {
 		$users = $this->config->getUsersForUserValue(
 			'firstrunwizard',
 			'show',
-			0
+			'0'
 		);
 		foreach ($users as $user) {
 			\call_user_func($callback, $user);
-			$this->config->setUserValue($user, 'firstrunwizard', 'show', 1);
+			$this->config->setUserValue($user, 'firstrunwizard', 'show', '1');
 		}
 	}
 }
