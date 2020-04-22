@@ -51,6 +51,9 @@ config = {
 				'chrome',
 				'firefox'
 			],
+			'phpVersions': [
+				'7.4',
+			],
 			# Note: this is required because tests/acceptance/run.sh disables firstrunwizard by default
 			'extraEnvironment': {
 				'APPS_TO_ENABLE': 'firstrunwizard'
@@ -1179,7 +1182,7 @@ def installCore(version, db, useBundledApp):
 		'image': 'owncloudci/core',
 		'pull': 'always',
 		'settings': {
-			'version': version,
+			'git_reference': 'php7.4-20200310',
 			'core_path': '/var/www/owncloud/server',
 			'db_type': dbType,
 			'db_name': database,
