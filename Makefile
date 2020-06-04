@@ -16,6 +16,7 @@ appstore_build_directory=$(CURDIR)/build/artifacts/appstore
 appstore_package_name=$(appstore_build_directory)/$(app_name)
 
 # dependency folders (leave empty if not required)
+composer_deps=vendor
 acceptance_test_deps=vendor-bin/behat/vendor
 
 # signing
@@ -45,8 +46,13 @@ BEHAT_BIN=vendor-bin/behat/vendor/bin/behat
 all: appstore
 
 .PHONY: clean
-clean:
+clean: clean-deps
 	rm -rf ./build/artifacts
+
+.PHONY: clean-deps
+clean-deps:
+	rm -Rf ${composer_deps}
+	rm -Rf vendor-bin/**/vendor vendor-bin/**/composer.lock
 
 # Builds the source and appstore package
 .PHONY: dist
