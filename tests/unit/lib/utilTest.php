@@ -41,18 +41,27 @@ class UtilTest extends \PHPUnit\Framework\TestCase {
 			->method('getiOSClientUrl')
 			->will($this->returnValue($defaultValues[2]));
 
-		$config->expects($this->at(0))
+		$config->expects($this->exactly(3))
 			->method('getSystemValue')
-			->with('customclient_desktop', $defaultValues[0])
-			->will($this->returnValue($configValues[0]));
-		$config->expects($this->at(1))
-			->method('getSystemValue')
-			->with('customclient_android', $defaultValues[1])
-			->will($this->returnValue($configValues[1]));
-		$config->expects($this->at(2))
-			->method('getSystemValue')
-			->with('customclient_ios', $defaultValues[2])
-			->will($this->returnValue($configValues[2]));
+			->withConsecutive(
+				[
+					'customclient_desktop',
+					$defaultValues[0]
+				],
+				[
+					'customclient_android',
+					$defaultValues[1]
+				],
+				[
+					'customclient_ios',
+					$defaultValues[2]
+				]
+			)
+			->willReturn(
+				$configValues[0],
+				$configValues[1],
+				$configValues[2]
+			);
 
 		$util = new Util($appManager, $config, $defaults);
 		$this->assertEquals([
