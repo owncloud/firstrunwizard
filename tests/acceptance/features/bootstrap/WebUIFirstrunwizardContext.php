@@ -26,7 +26,6 @@ use Behat\MinkExtension\Context\RawMinkContext;
 use Page\FirstRunWizardPage;
 use TestHelpers\SetupHelper;
 use Page\PersonalGeneralSettingsPageFirstRunWizard;
-use Behat\Mink\Session;
 
 require_once 'bootstrap.php';
 
@@ -39,7 +38,7 @@ class WebUIFirstrunwizardContext extends RawMinkContext implements Context {
 	 * @var FeatureContext
 	 */
 	private $featureContext;
-	
+
 	/**
 	 * @var WebUIGeneralContext
 	 */
@@ -86,7 +85,7 @@ class WebUIFirstrunwizardContext extends RawMinkContext implements Context {
 	 *
 	 * @return void
 	 */
-	public function theUserShouldSeeTheFirstrunwizardPopupMessage() {
+	public function theUserShouldSeeTheFirstrunwizardPopupMessage():void {
 		$firstRunWizardScreen = $this->firstRunWizardPage->getWizardPopup();
 		if ($firstRunWizardScreen === null) {
 			throw new Exception("Could not find firstrunwizard popup");
@@ -103,7 +102,7 @@ class WebUIFirstrunwizardContext extends RawMinkContext implements Context {
 	 *
 	 * @return void
 	 */
-	public function theUserShouldNotNotSeeTheFirstrunwizardPopUpMessage() {
+	public function theUserShouldNotNotSeeTheFirstrunwizardPopUpMessage(): void {
 		$firstrunwizardScreen = $this->firstRunWizardPage->getWizardPopup();
 
 		if ($firstrunwizardScreen !== null) {
@@ -119,7 +118,7 @@ class WebUIFirstrunwizardContext extends RawMinkContext implements Context {
 	 *
 	 * @return void
 	 */
-	public function closeDialogBox() {
+	public function closeDialogBox(): void {
 		$this->firstRunWizardPage->closePopup();
 	}
 
@@ -128,7 +127,7 @@ class WebUIFirstrunwizardContext extends RawMinkContext implements Context {
 	 *
 	 * @return void
 	 */
-	public function requestToShowFirstRunWizardPopupInSettingsPage() {
+	public function requestToShowFirstRunWizardPopupInSettingsPage(): void {
 		$this->personalGeneralSettingsPageFirstRunWizard->showFirstRunWizardPopupInSettingsPage($this->getSession());
 	}
 
@@ -140,7 +139,7 @@ class WebUIFirstrunwizardContext extends RawMinkContext implements Context {
 	 * @throws Exception
 	 * @return void
 	 */
-	public function theHeadingOfThePopupShouldBe($expectedMessage) {
+	public function theHeadingOfThePopupShouldBe($expectedMessage): void {
 		$headingMessage = $this->firstRunWizardPage->getHeadingMessage();
 
 		PHPUnit\Framework\Assert::assertSame(
@@ -158,7 +157,7 @@ class WebUIFirstrunwizardContext extends RawMinkContext implements Context {
 	 * @return void
 	 * @throws Exception
 	 */
-	public function changeTheDefaultPopupMessage($newMessage) {
+	public function changeTheDefaultPopupMessage(string $newMessage): void {
 		SetupHelper::init(
 			$this->featureContext->getAdminUsername(),
 			$this->featureContext->getAdminPassword(),
@@ -184,7 +183,7 @@ class WebUIFirstrunwizardContext extends RawMinkContext implements Context {
 	 *
 	 * @return void
 	 */
-	public function setUpScenario(BeforeScenarioScope $scope) {
+	public function setUpScenario(BeforeScenarioScope $scope): void {
 		// Get the environment
 		$environment = $scope->getEnvironment();
 		// Get all the contexts you need in this context
@@ -197,7 +196,7 @@ class WebUIFirstrunwizardContext extends RawMinkContext implements Context {
 	 *
 	 * @return void
 	 */
-	public function afterScenario() {
+	public function afterScenario(): void {
 		if ($this->contentOfWizardFile !== null) {
 			SetupHelper::createFileOnServer(
 				$this->pathOfWizardFileFromServerRoot,

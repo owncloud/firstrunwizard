@@ -40,7 +40,7 @@ class FirstRunWizardPage extends OwncloudPage {
 	 *
 	 * @return void
 	 */
-	public function closePopup() {
+	public function closePopup(): void {
 		$closeButton = $this->find("xpath", $this->closeWizardXpath);
 		$this->assertElementNotNull(
 			$closeButton,
@@ -55,19 +55,19 @@ class FirstRunWizardPage extends OwncloudPage {
 	 * @param Session $session
 	 * @param int $timeout_msec
 	 *
-	 * @return NodeElement
+	 * @return void
 	 */
 	public function waitTillPageIsLoaded(
 		Session $session,
-		$timeout_msec = STANDARD_UI_WAIT_TIMEOUT_MILLISEC
-	) {
+		int $timeout_msec = STANDARD_UI_WAIT_TIMEOUT_MILLISEC
+	): void {
 		$this->waitTillXpathIsVisible($this->closeWizardXpath, $timeout_msec);
 	}
 
 	/**
 	 * @return NodeElement|null
 	 */
-	public function getWizardPopup() {
+	public function getWizardPopup(): ?NodeElement {
 		return $this->find("xpath", $this->firstRunWizardXpath);
 	}
 
@@ -76,7 +76,7 @@ class FirstRunWizardPage extends OwncloudPage {
 	 *
 	 * @return string
 	 */
-	public function getHeadingMessage() {
+	public function getHeadingMessage(): string {
 		$assertHeadingMessage = $this->find('xpath', $this->headingMessageXpath);
 		$this->assertElementNotNull(
 			$assertHeadingMessage,

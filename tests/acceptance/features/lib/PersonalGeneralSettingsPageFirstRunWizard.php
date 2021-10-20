@@ -23,7 +23,6 @@
 namespace Page;
 
 use Behat\Mink\Session;
-use Behat\Mink\Element\NodeElement;
 
 /**
  * Page object for General section of Settings page
@@ -38,9 +37,9 @@ class PersonalGeneralSettingsPageFirstRunWizard extends PersonalGeneralSettingsP
 	 *
 	 * @param Session $session
 	 *
-	 * @return null
+	 * @return void
 	 */
-	public function showFirstRunWizardPopupInSettingsPage(Session $session) {
+	public function showFirstRunWizardPopupInSettingsPage(Session $session): void {
 		$firstRunWizardPopUp = $this->find("xpath", $this->showFirstRunWizardScreenXpath);
 		$this->assertElementNotNull($firstRunWizardPopUp, "'Show First Run Wizard' button could not be found.");
 		$firstRunWizardPopUp->click();
