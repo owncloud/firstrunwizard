@@ -7,4 +7,3 @@ file_filter = <lang>/firstrunwizard.po
 source_file = templates/firstrunwizard.pot
 source_lang = en
 type = PO
-
