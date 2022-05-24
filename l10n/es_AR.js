@@ -15,4 +15,4 @@ OC.L10N.register(
     "There’s more information in the <a target=\"_blank\" href=\"%s\">documentation</a> and on our <a target=\"_blank\" href=\"http://owncloud.org\">website</a>." : "Mas información en la  <a target=\"_blank\" href=\"%s\">documentación</a> y en nuestra <a target=\"_blank\" href=\"http://owncloud.org\">página web</a>.",
     "If you like ownCloud,\n\t<a href=\"mailto:?subject=ownCloud\n\t\t&body=ownCloud is a great open software to sync and share your files.\n\t\tYou can freely get it from http://owncloud.org\">\n\t\trecommend it to your friends</a>\n\tand <a href=\"http://owncloud.org/promote\"\n\t\ttarget=\"_blank\">spread the word</a>!" : "Si te gusta ownCloud,\n\t<a href=\"mailto:?subject=ownCloud\n\t\t&body=ownCloud is a great open software to sync and share your files.\n\t\tYou can freely get it from http://owncloud.org\">\n\t\trecomiéndalo a tus amigos</a>\n\tand <a href=\"http://owncloud.org/promote\"\n\t\ttarget=\"_blank\">difunde la palabra</a>!"
 },
-"nplurals=2; plural=(n != 1);");
+"nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
