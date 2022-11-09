@@ -4,11 +4,13 @@ Feature:  first login wizard
   I want to be informed about the basic features of ownCloud when I first log in
   So that I can get a basic overview about ownCloud
 
+
   Scenario: User logs in into ownCloud for the first time
     Given user "Alice" has been created with default attributes and without skeleton files
     When user "Alice" logs in using the webUI
     Then the user should see the firstrunwizard popup message
     And the heading of the popup should be "A safe home for all your data"
+
 
   Scenario: Previously created user logs into ownCloud
     Given user "Alice" has been created with default attributes and without skeleton files
