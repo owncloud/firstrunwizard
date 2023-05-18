@@ -65,9 +65,9 @@ class ResetAll extends Command {
 	 * @param InputInterface $input
 	 * @param OutputInterface $output
 	 *
-	 * @return int|null|void
+	 * @return int
 	 */
-	public function execute(InputInterface $input, OutputInterface $output) {
+	public function execute(InputInterface $input, OutputInterface $output): int {
 		$output->writeln('Resetting firstrunwizard for all users');
 		$progress = new ProgressBar($output);
 		$this->config->resetAllUsers(function ($user) use ($progress) {
@@ -76,5 +76,6 @@ class ResetAll extends Command {
 		$progress->finish();
 		$output->writeln("");
 		$output->writeln("<info>Done</info>");
+		return 0;
 	}
 }
