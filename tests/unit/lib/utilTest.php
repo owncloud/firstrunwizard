@@ -8,7 +8,6 @@ use OCP\Defaults;
 use OCP\IConfig;
 
 class UtilTest extends \PHPUnit\Framework\TestCase {
-
 	/**
 	 * same code as in core: tests/lib/UtilTest.php
 	 */
