@@ -31,7 +31,6 @@ use OCP\IUserSession;
  * @package OCA\FirstRunWizard
  */
 class Config {
-
 	/**
 	 * @var IConfig
 	 */

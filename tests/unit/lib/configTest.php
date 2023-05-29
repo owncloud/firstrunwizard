@@ -12,7 +12,6 @@ use OCP\IUserSession;
  * @package OCA\FirstRunWizard\Tests
  */
 class ConfigTest extends \PHPUnit\Framework\TestCase {
-
 	/**
 	 * @param bool $isUserAvailable
 	 *

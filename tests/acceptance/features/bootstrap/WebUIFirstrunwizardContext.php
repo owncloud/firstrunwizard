@@ -33,7 +33,6 @@ require_once 'bootstrap.php';
  * Context for First run wizard specific webUI steps
  */
 class WebUIFirstrunwizardContext extends RawMinkContext implements Context {
-
 	/**
 	 * @var FeatureContext
 	 */
