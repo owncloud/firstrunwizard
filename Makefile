@@ -85,7 +85,7 @@ appstore:
 	wizard.php \
 	$(appstore_package_name)
 
-	rm -R $(appstore_package_name)/l10n/{.tx,.gitignore}
+	rm -R -f $(appstore_package_name)/l10n/{.tx,.gitignore}
 ifdef CAN_SIGN
 	$(sign) --path="$(appstore_package_name)"
 else
