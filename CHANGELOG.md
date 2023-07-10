@@ -4,7 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
-## [Unreleased]
+## [1.3.0] - 2023-07-10
+
+### Changed
+
+- [#179](https://github.com/owncloud/firstrunwizard/issues/179) - Always return an int from Symfony Command execute method
 
 ## [1.2.0] - 2019-04-16
 
@@ -44,6 +48,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
  - Initial implementation
 
-[Unreleased]: https://github.com/owncloud/firstrunwizard/compare/v1.2.0...master
+[Unreleased]: https://github.com/owncloud/firstrunwizard/compare/v1.3.0...master
+[1.3.0]: https://github.com/owncloud/firstrunwizard/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/owncloud/firstrunwizard/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/owncloud/firstrunwizard/compare/v1.1...v1.1.1
