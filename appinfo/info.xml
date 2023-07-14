@@ -8,7 +8,8 @@ The First run wizard can be customized to meet specific design goals, or to chan
 	<licence>AGPL</licence>
 	<author>Frank Karlitschek, Jan-Christoph Borchardt, Tom Needham</author>
 	<dependencies>
-		<owncloud min-version="10.2" max-version="11" />
+                <owncloud min-version="10.11" max-version="10" />
+                <php min-version="7.4" />
 	</dependencies>
 	<version>1.3.0</version>
 	<namespace>FirstRunWizard</namespace>

@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 ### Changed
 
 - [#179](https://github.com/owncloud/firstrunwizard/issues/179) - Always return an int from Symfony Command execute method
+- Minimum core version 10.11, minimum php version 7.4
 
 ## [1.2.0] - 2019-04-16
 
