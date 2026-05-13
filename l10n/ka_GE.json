@@ -1,0 +1,16 @@
+{ "translations": {
+    "A safe home for all your data" : "უსაფრთხო სახლი თქვენი მონაცემებისთვის",
+    "Access & share your files, calendars, contacts, mail & more from any device, on your terms" : "იქონიეთ წვდომა & გააზიარეთ თქვენი ფაილები, კალენდრები, კონტაქტები, ელფოსტა და ა.შ. ნებისმიერი მოწყობილობიდან, თქვენი სურვილით",
+    "Get the apps to sync your files" : "აპლიკაცია ფაილების სინქრონიზაციისთვის",
+    "Desktop client" : "კომპიუტერის კლიენტი",
+    "Android app" : "Android-ის აპლიკაცია",
+    "iOS app" : "iOS-ის აპლიკაცია",
+    "Connect your desktop apps to %s" : "დააკავშირეთ თქვენი კომპიუტერის აპები %s-ისთან",
+    "Connect your Calendar" : "დაუკავშირდით თქვენ კალენდარს",
+    "Connect your Contacts" : "დაუკავშირდით თქვენ კონტაქტებს",
+    "Documentation" : "დოკუმენტაცია",
+    "Access files via WebDAV" : "დაუკავშირდით ფაილებს WebDAV–ით",
+    "There’s more information in the <a target=\"_blank\" href=\"%s\">documentation</a> and on our <a target=\"_blank\" href=\"http://owncloud.org\">website</a>." : "მეტი ინფორმაცია, შეგიძლიათ, <a target=\"_blank\" href=\"%s\">დოკუმენტაციაში</a> და ჩვენს <a target=\"_blank\" href=\"http://owncloud.org\">ვებგვერდზე</a> იხილოთ.",
+    "If you like ownCloud,\n\t<a href=\"mailto:?subject=ownCloud\n\t\t&body=ownCloud is a great open software to sync and share your files.\n\t\tYou can freely get it from http://owncloud.org\">\n\t\trecommend it to your friends</a>\n\tand <a href=\"http://owncloud.org/promote\"\n\t\ttarget=\"_blank\">spread the word</a>!" : "თუ ownCloud მოგწონთ,\n\t<a href=\"mailto:?subject=ownCloud\n\t\t&body=ownCloud is a great open software to sync and share your files.\n\t\tYou can freely get it from http://owncloud.org\">\n\t\tგაუწიეთ მას რეკომენდაცია თქვენს მეგობრებთან</a>\n\tand <a href=\"http://owncloud.org/promote\"\n\t\ttarget=\"_blank\">ისაუბრეთ მის შესახებ</a>!"
+},"pluralForm" :"nplurals=2; plural=(n!=1);"
+}

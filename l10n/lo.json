@@ -1,0 +1,16 @@
+{ "translations": {
+    "A safe home for all your data" : "ບ່ອນທີ່ປອດໄພສຳລັບຂໍ້ມູນທັງໝົດຂອງທ່ານ",
+    "Access & share your files, calendars, contacts, mail & more from any device, on your terms" : "ເຂົ້າເຖິງ ແລະ ແບ່ງປັນໄຟລ໌, ປະຕິທິນ, ລາຍຊື່ຜູ້ຕິດຕໍ່, ອີເມລ ແລະ ອື່ນໆ ຈາກທຸກອຸປະກອນ, ຕາມເງື່ອນໄຂຂອງທ່ານ",
+    "Get the apps to sync your files" : "ຮັບແອັບຯເພື່ອຊິງຄ໌ໄຟລ໌ຂອງທ່ານ",
+    "Desktop client" : "ໂປຣແກຣມເທິງເດັສທັອບ",
+    "Android app" : "ແອັບຯ Android",
+    "iOS app" : "ແອັບຯ iOS",
+    "Connect your desktop apps to %s" : "ເຊື່ອມຕໍ່ແອັບຯເດັສທັອບຂອງທ່ານກັບ %s",
+    "Connect your Calendar" : "ເຊື່ອມຕໍ່ປະຕິທິນຂອງທ່ານ",
+    "Connect your Contacts" : "ເຊື່ອມຕໍ່ລາຍຊື່ຜູ້ຕິດຕໍ່ຂອງທ່ານ",
+    "Documentation" : "ເອກະສານ",
+    "Access files via WebDAV" : "ເຂົ້າເຖິງໄຟລ໌ຜ່ານ WebDAV",
+    "There’s more information in the <a target=\"_blank\" href=\"%s\">documentation</a> and on our <a target=\"_blank\" href=\"http://owncloud.org\">website</a>." : "ມີຂໍ້ມູນເພີ່ມເຕີມໃນ <a target=\"_blank\" href=\"%s\">ເອກະສານ</a> ແລະ ໃນ <a target=\"_blank\" href=\"http://owncloud.org\">ເວັບໄຊທ໌</a> ຂອງພວກເຮົາ.",
+    "If you like ownCloud,\n\t<a href=\"mailto:?subject=ownCloud\n\t\t&body=ownCloud is a great open software to sync and share your files.\n\t\tYou can freely get it from http://owncloud.org\">\n\t\trecommend it to your friends</a>\n\tand <a href=\"http://owncloud.org/promote\"\n\t\ttarget=\"_blank\">spread the word</a>!" : "ຖ້າທ່ານມັກ ownCloud,\n\t<a href=\"mailto:?subject=ownCloud\n\t\t&body=ownCloud ແມ່ນຊອບແວເປີດທີ່ດີເລີດສຳລັບການຊິງຄ໌ ແລະ ແບ່ງປັນໄຟລ໌ຂອງທ່ານ.\n\t\tທ່ານສາມາດດາວໂຫຼດໄດ້ຟຣີທີ່ http://owncloud.org\">\n\t\tແນະນຳໃຫ້ໝູ່ເພື່ອນຂອງທ່ານ</a>\n\tແລະ <a href=\"http://owncloud.org/promote\"\n\t\ttarget=\"_blank\">ບອກຕໍ່ໃຫ້ຄົນອື່ນຮູ້</a>!"
+},"pluralForm" :"nplurals=1; plural=0;"
+}
