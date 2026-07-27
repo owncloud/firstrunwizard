@@ -5,10 +5,10 @@ function showfirstrunwizard(){
 		speed:100, 
 		width:"70%", 
 		height:"70%", 
-		href: OC.filePath('firstrunwizard', '', 'wizard.php'),
+		href: OC.generateUrl('/apps/firstrunwizard/wizard'),
 		onClosed : function(){
 			$.ajax({
-			url: OC.filePath('firstrunwizard', 'ajax', 'disable.php'),
+			url: OC.generateUrl('/apps/firstrunwizard/ajax/disable'),
 			data: ""
 			});
 		}  
