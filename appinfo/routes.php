@@ -8,9 +8,9 @@
 
 /** @var $this OC\Route\Router */
 
-$this->create('firstrunwizard_enable', 'ajax/enable.php')
+$this->create('firstrunwizard_enable', 'ajax/enable')
 	->actionInclude('firstrunwizard/ajax/enable.php');
-$this->create('firstrunwizard_disable', 'ajax/disable.php')
+$this->create('firstrunwizard_disable', 'ajax/disable')
 	->actionInclude('firstrunwizard/ajax/disable.php');
-$this->create('firstrunwizard_wizard', 'wizard.php')
+$this->create('firstrunwizard_wizard', 'wizard')
 	->actionInclude('firstrunwizard/wizard.php');
