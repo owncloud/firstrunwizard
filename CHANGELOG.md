@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [1.4.2] - 2026-07-28
+
 ### Changed
 
 - Rewire the legacy routes to extension-free urls so they are reachable at their own declared urls - [#203](https://github.com/owncloud/firstrunwizard/pull/203)
@@ -58,7 +60,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
  - Initial implementation
 
-[Unreleased]: https://github.com/owncloud/firstrunwizard/compare/v1.4.1..master
+[Unreleased]: https://github.com/owncloud/firstrunwizard/compare/v1.4.2..master
+[1.4.2]: https://github.com/owncloud/firstrunwizard/compare/v1.4.1..v1.4.2
 [1.4.1]: https://github.com/owncloud/firstrunwizard/compare/v1.4.0..v1.4.1
 [1.4.0]: https://github.com/owncloud/firstrunwizard/compare/v1.2.0..v1.4.0
 [1.2.0]: https://github.com/owncloud/firstrunwizard/compare/v1.1.1...v1.2.0
