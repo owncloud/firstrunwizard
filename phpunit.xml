@@ -3,8 +3,9 @@
         bootstrap="../../tests/bootstrap.php" 
         verbose="true" 
         failOnRisky="true" 
-        failOnWarning="true" 
-        timeoutForSmallTests="900" 
+        failOnWarning="true"
+        convertDeprecationsToExceptions="true"
+        timeoutForSmallTests="900"
         timeoutForMediumTests="900" 
         timeoutForLargeTests="900" 
         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
